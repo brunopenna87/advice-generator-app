@@ -1,112 +1,138 @@
-# Frontend Mentor - Advice generator app solution
+# Frontend Mentor – Advice Generator App Solution
 
-This is a solution to the [Advice generator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+This is my solution to the [Advice Generator App](https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db) challenge on Frontend Mentor. The goal was to build a fully responsive advice card UI and wire it up to the Advice Slip JSON API using vanilla JavaScript.
 
-## Table of contents
+---
+
+## Table of Contents
 
 - [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
+- [The Challenge](#the-challenge)
+- [Screenshot](#screenshot)
+- [Links](#links)
+- [My Process](#my-process)
+- [Built With](#built-with)
+- [What I Learned](#what-i-learned)
+- [Continued Development](#continued-development)
+- [Useful Resources](#useful-resources)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
+---
 
 ## Overview
 
-### The challenge
+Users can:
 
-Users should be able to:
+- View an optimal layout for the app depending on their device’s screen size (mobile & desktop).  
+- See hover states for the dice button.  
+- Generate a new piece of advice by clicking the dice icon.  
 
-- View the optimal layout for the app depending on their device's screen size
-- See hover states for all interactive elements on the page
-- Generate a new piece of advice by clicking the dice icon
+I focused on clean, semantic HTML, modern CSS (Flexbox & Grid), and a minimal, readable JavaScript implementation that fetches advice from the API on load and on button click.
 
-### Screenshot
+---
 
-![](./screenshot.jpg)
+## The Challenge
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
+- Build the UI to match the Figma design.  
+- Implement responsive breakpoints so the layout adapts fluidly.  
+- Fetch random advice slips from the Advice Slip API using `fetch` + `async/await`.  
+- Handle loading, success, and error states gracefully.  
 
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
+---
 
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
+## Screenshot
 
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+[Advice Generator App Screenshot](./screenshots/advice-generator-screenshot.png)
 
-### Links
+Links
+Solution URL: https://github.com/brunopenna87/advice-generator-app
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+Live Site URL: https://brunopenna87.github.io/advice-generator-app/
 
-## My process
+My Process
+Setup & Layout
 
-### Built with
+Created semantic HTML structure.
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+Used CSS variables for theme colors and a mobile-first workflow.
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+Applied Flexbox for centering the card and Grid for optional layout patterns.
 
-### What I learned
+Responsive Design
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+Added media queries at 768px to switch between mobile and desktop typography, spacing, and divider images.
 
-To see how you can add code snippets, see below:
+JavaScript & API Integration
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
+Wrote a single async function to fetch advice from the API and updated the DOM.
+
+Used try/catch for error handling and cache: "no-cache" to avoid stale advice.
+
+Attached the function to both DOMContentLoaded and the dice button’s click event.
+
+Polish & Debugging
+
+Used console.log and browser DevTools to verify data flow.
+
+Ensured hover and active states match the design.
+
+Built With
+HTML5 – Semantic markup
+
+CSS3 – Custom properties, Flexbox, Grid, Media Queries
+
+JavaScript (ES6+) – fetch, async/await, try/catch, template strings
+
+Advice Slip JSON API – Random advice endpoint
+
+Google Fonts – Manrope
+
+What I Learned
+I sharpened my skills in:
+
+Asynchronous JavaScript: using fetch with async/await and handling errors.
+
+Destructuring & Template Strings: writing concise code to extract and display API data.
+
+Responsive Design: refining breakpoints and layout shifts between mobile and desktop.
+
+Clean Code Practices: organizing a minimal script with no repetition and clear function names.
+
+js
+Copiar
+Editar
+// Example: concise fetching and DOM update
+async function getAdvice() {
+  try {
+    const { slip: { id, advice } } = await (await fetch('https://api.adviceslip.com/advice', { cache: 'no-cache' })).json();
+    adviceIdEl.innerText = `Advice #${id}`;
+    adviceTextEl.innerText = `"${advice}"`;
+  } catch {
+    adviceTextEl.innerText = 'Oops, something went wrong.';
+  }
 }
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
+Continued Development
+Explore adding a loading spinner or animation while fetching new advice.
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+Implement unit tests for the fetch function using a mocking library.
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+Experiment with localStorage to cache the last advice across page reloads.
 
-### Continued development
+Useful Resources
+Advice Slip JSON API Documentation – Official API reference.
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+MDN: fetch API – Details on fetch, options, response handling.
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+CSS-Tricks: Flexbox Guide – Great reference for Flexbox patterns.
 
-### Useful resources
+Author
+Bruno Penna
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+GitHub: @brunopenna87
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+LinkedIn: [bruno-cesare-penna-e-costa](https://www.linkedin.com/in/bruno-cesare-penna-e-costa-77951a6a/)
 
-## Author
-
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+Acknowledgments
+Thanks to Dev em Dobro e Frontend Mentor for providing the challenge and Figma assets.
+Inspired by community solutions and best practices shared on GitHub.
