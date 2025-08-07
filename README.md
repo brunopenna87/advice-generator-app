@@ -1,4 +1,4 @@
-# Frontend Mentor – Advice Generator App Solution
+## Frontend Mentor – Advice Generator App Solution
 
 This is my solution to the [Advice Generator App](https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db) challenge on Frontend Mentor. The goal was to build a fully responsive advice card UI and wire it up to the Advice Slip JSON API using vanilla JavaScript.
 
@@ -47,16 +47,15 @@ I focused on clean, semantic HTML, modern CSS (Flexbox & Grid), and a minimal, r
 
 ---
 
-
----
-
-
-Links
+## Links
 Solution URL: https://github.com/brunopenna87/advice-generator-app
 
 Live Site URL: https://brunopenna87.github.io/advice-generator-app/
 
-My Process
+---
+
+## My Process
+
 Setup & Layout
 
 Created semantic HTML structure.
@@ -83,7 +82,10 @@ Used console.log and browser DevTools to verify data flow.
 
 Ensured hover and active states match the design.
 
-Built With
+---
+
+## Built With
+
 HTML5 – Semantic markup
 
 CSS3 – Custom properties, Flexbox, Grid, Media Queries
@@ -94,7 +96,10 @@ Advice Slip JSON API – Random advice endpoint
 
 Google Fonts – Manrope
 
-What I Learned
+---
+
+## What I Learned
+
 I sharpened my skills in:
 
 Asynchronous JavaScript: using fetch with async/await and handling errors.
@@ -118,6 +123,7 @@ async function getAdvice() {
     adviceTextEl.innerText = 'Oops, something went wrong.';
   }
 }
+
 Continued Development
 Explore adding a loading spinner or animation while fetching new advice.
 
@@ -132,13 +138,19 @@ MDN: fetch API – Details on fetch, options, response handling.
 
 CSS-Tricks: Flexbox Guide – Great reference for Flexbox patterns.
 
-Author
+---
+
+## Author
+
 Bruno Penna
 
 GitHub: @brunopenna87
 
 LinkedIn: [bruno-cesare-penna-e-costa](https://www.linkedin.com/in/bruno-cesare-penna-e-costa-77951a6a/)
 
-Acknowledgments
+---
+
+## Acknowledgments
+
 Thanks to Dev em Dobro e Frontend Mentor for providing the challenge and Figma assets.
 Inspired by community solutions and best practices shared on GitHub.
