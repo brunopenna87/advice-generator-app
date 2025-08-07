@@ -43,7 +43,10 @@ I focused on clean, semantic HTML, modern CSS (Flexbox & Grid), and a minimal, r
 
 ## Screenshot
 
-![Advice Generator App Screenshot](./advice-generator-screenshot.png.png)
+![Advice Generator App Screenshot](screenshots/advice-generator-screenshot.png)
+
+---
+
 
 ---
 
