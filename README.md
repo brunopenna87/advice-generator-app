@@ -1,4 +1,4 @@
-## Frontend Mentor – Advice Generator App Solution
+# Frontend Mentor – Advice Generator App Solution
 
 This is my solution to the [Advice Generator App](https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db) challenge on Frontend Mentor. The goal was to build a fully responsive advice card UI and wire it up to the Advice Slip JSON API using vanilla JavaScript.
 
